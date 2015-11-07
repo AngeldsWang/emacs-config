@@ -1,0 +1,13 @@
+*.bk
+auto-save-list/
+.cask/
+.DS_Store
+ido.*
+ac-*
+eshell/
+ggtags/
+projectile-*
+projectile.*
+var/
+*~
+inits/~*
