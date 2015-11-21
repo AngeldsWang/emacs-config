@@ -1,5 +1,5 @@
 (defalias 'perl-mode 'cperl-mode)
-
+(add-hook 'cperl-mode-hook 'ggtags-mode)
 (add-to-list 'auto-mode-alist '("\\.psgi$" . perl-mode))
 (add-to-list 'auto-mode-alist '("\\.t$" . perl-mode))
 
