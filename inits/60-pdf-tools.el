@@ -21,6 +21,6 @@
   )
 )
 
-(setq pdf-view-midnight-colors '("#e3e2d5" . "#505050"))
+(setq pdf-view-midnight-colors '("#dcdccc" . "#3f3f3f"))
 
 (provide '60-pdf-tools)
