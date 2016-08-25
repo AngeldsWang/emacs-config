@@ -18,8 +18,8 @@
 ;; Use multiple-cursors to rename tags
 (define-key web-mode-map (kbd "C-c C-r") 'mc/mark-sgml-tag-pair)
 
-;; Disable over zealous pairing
-(setq web-mode-enable-auto-pairing nil)
+;; no Disable over zealous pairing
+(setq web-mode-enable-auto-pairing t)
 
 ;; Sort of like matchit
 (evil-declare-key 'normal web-mode-map (kbd "%") 'web-mode-navigate)

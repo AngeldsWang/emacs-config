@@ -11,3 +11,4 @@
   :config
   (setq init-loader-show-log-after-init nil)
   (init-loader-load "~/.emacs.d/inits"))
+(put 'erase-buffer 'disabled nil)

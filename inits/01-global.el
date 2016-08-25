@@ -43,4 +43,6 @@
 (setq desktop-path (list "~/.emacs-server"))
 (desktop-save-mode 1)
 
+(require 'wgrep)
+
 (provide '01-global)
