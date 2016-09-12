@@ -1,5 +1,6 @@
 (require 'helm)
 (require 'helm-config)
+(require 'helm-ag)
 
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
@@ -15,6 +16,7 @@
 
 (global-set-key (kbd "C-x C-d") 'helm-browse-project)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-s") 'helm-do-ag-this-file)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
