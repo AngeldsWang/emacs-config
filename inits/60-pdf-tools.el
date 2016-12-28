@@ -10,7 +10,8 @@
 (require 'pdf-sync)
 (require 'tablist-filter)
 (require 'tablist)
-(add-to-list 'auto-mode-alist (cons "\\.pdf$" 'pdf-view-mode))
+(add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
+;;(add-to-list 'auto-mode-alist (cons "\\.pdf$" 'pdf-view-mode))
 
 (add-hook 'pdf-view-mode-hook
   (lambda ()
