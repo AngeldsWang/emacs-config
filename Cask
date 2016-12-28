@@ -47,6 +47,7 @@
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")
 (depends-on "f")
+(depends-on "fish-mode")
 (depends-on "flx")
 (depends-on "flx-ido")
 (depends-on "flx-isearch")
