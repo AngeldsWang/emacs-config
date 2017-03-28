@@ -17,6 +17,7 @@
 (global-set-key (kbd "C-x C-d") 'helm-browse-project)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-s") 'helm-do-ag-this-file)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal

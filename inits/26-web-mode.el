@@ -14,6 +14,7 @@
 (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$"  . web-mode))
 (add-to-list 'auto-mode-alist '("\\.twig$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mt$"   . web-mode))
 
 ;; Use multiple-cursors to rename tags
 (define-key web-mode-map (kbd "C-c C-r") 'mc/mark-sgml-tag-pair)

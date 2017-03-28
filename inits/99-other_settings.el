@@ -32,7 +32,7 @@
   (interactive)
   (let ((proj-dir (file-name-directory (buffer-file-name))))
     ;; if hobby project path contains string "hobby-proj1"
-    (if (string-match-p "lobi-tournament" proj-dir)
+    (if (string-match-p "kuwata" proj-dir)
         (my-personal-code-style))))
 
     ;; if commericial project path contains string "commerical-proj"

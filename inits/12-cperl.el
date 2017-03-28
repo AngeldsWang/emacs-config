@@ -228,4 +228,20 @@ and closing parentheses and brackets."
 ;; auto carton setup
 (add-hook 'cperl-mode-hook 'helm-perldoc:carton-setup)
 
+
+;; リージョン内のperlソースを整形する。
+(defun perltidy-region ()
+  "Run perltidy on the current region."
+      (interactive)
+          (save-excursion
+                (shell-command-on-region (point) (mark) "perltidy -q" nil t)))
+                (global-set-key "\C-ct" 'perltidy-region)
+
+;; ソースすべてを整形する。
+(defun perltidy-defun ()
+  "Run perltidy on the current defun."
+    (interactive)
+      (save-excursion (mark-defun) (perltidy-region)))
+      (global-set-key (kbd "C-c C-t") 'perltidy-defun)
+
 (provide '12-cperl)
