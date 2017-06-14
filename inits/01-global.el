@@ -10,6 +10,8 @@
 ;; code indentation
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
+;; Debug on init
+;;(setq debug-on-error t)
 (global-hl-line-mode 1)
 (setq indent-line-function 'insert-tab)
 
@@ -42,13 +44,25 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-(add-hook 'after-init-hook 'global-company-mode)
-(add-to-list 'company-backends 'company-tern)
+
+;;(add-hook 'after-init-hook 'global-company-mode)
+;;(add-to-list 'company-backends 'company-tern)
 
 (require 'desktop)
 (setq desktop-path (list "~/.emacs-server"))
 (desktop-save-mode 1)
 
 (require 'wgrep)
+
+;; set gpg program
+(setq epg-gpg-program "/usr/local/opt/gnupg/libexec/gpgbin/gpg")
+
+
+;; ediff
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq ediff-split-window-function 'split-window-horizontally)
+
+;; rebind set-mark-command
+(global-set-key (kbd "C-;") 'set-mark-command)
 
 (provide '01-global)
