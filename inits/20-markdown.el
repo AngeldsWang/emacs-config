@@ -13,7 +13,10 @@
 (setq markdown-command "/usr/local/bin/multimarkdown")
 ;;(setq markdown-css-paths `(,(expand-file-name "markdown.css" ~/.emacs.d/plugins)))
 
-(custom-set-variables '(markdown-preview-style "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
+(setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
 (global-set-key (kbd "C-c C-v") 'markdown-preview-mode)
+
+;; MathJax async
+(add-to-list 'markdown-preview-javascript '("http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" . async))
 
 (provide '20-markdown)
