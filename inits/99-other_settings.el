@@ -40,7 +40,7 @@
     ;;    (my-office-code-style))))
 
 ;; prog-mode-hook requires emacs24+
-(add-hook 'prog-mode-hook 'my-setup-develop-environment)
+;;(add-hook 'prog-mode-hook 'my-setup-develop-environment)
 ;; a few major-modes does NOT inherited from prog-mode
 (add-hook 'lua-mode-hook 'my-setup-develop-environment)
 (add-hook 'web-mode-hook 'my-setup-develop-environment)
