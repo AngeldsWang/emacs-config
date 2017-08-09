@@ -55,7 +55,9 @@
 (require 'wgrep)
 
 ;; set gpg program
-(setq epg-gpg-program "/usr/local/opt/gnupg/libexec/gpgbin/gpg")
+(require 'epa-file)
+(custom-set-variables '(epg-gpg-program "/usr/local/opt/gnupg/libexec/gpgbin/gpg"))
+(epa-file-enable)
 
 
 ;; ediff
@@ -64,5 +66,8 @@
 
 ;; rebind set-mark-command
 (global-set-key (kbd "C-;") 'set-mark-command)
+
+
+(setq redisplay-dont-pause nil)
 
 (provide '01-global)
