@@ -67,6 +67,9 @@
 ;; rebind set-mark-command
 (global-set-key (kbd "C-;") 'set-mark-command)
 
+(global-set-key (kbd "C-M-n") 'new-frame)
+(global-set-key (kbd "M-`") 'other-frame)
+
 
 (setq redisplay-dont-pause nil)
 
