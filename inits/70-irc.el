@@ -1,6 +1,8 @@
 (require 'circe)
 (require 'circe-notifications)
 (require 'jabber)
+(require 'circe-color-nicks)
+(enable-circe-color-nicks)
 
 ;;(setq auth-source-debug t)
 
@@ -47,7 +49,7 @@
 (setq circe-network-options
       '(("Freenode"
          :nick "angelds"
-         :channels (:after-auth "#emacs" "#emacs-circe" "#perl" "#clojure" "#go-nuts" "#docker" "#nginx" "#scheme" "##security")
+         :channels (:after-auth "#emacs" "#emacs-circe" "#perl" "#perl6" "#clojure" "#go-nuts" "#docker" "#nginx" "#scheme" "##security")
          :nickserv-password my-nickserv-password)
         ("Mozilla"
          :host "irc.mozilla.org"
@@ -74,5 +76,7 @@
 ;;          circe-notifications-alert-style 'osx-notifier)) ;; see alert-styles for more!
 
 ;; (add-hook 'circe-server-connected-hook 'enable-circe-notifications)
+
+(add-hook 'circe-channel-mode-hook (lambda () (setq line-spacing 0.5)))
 
 (provide '70-irc)
