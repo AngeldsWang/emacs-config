@@ -5,6 +5,7 @@
 
 ;;(load-theme 'zenburn t)
 (require 'doom-themes)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/inits/themes/")
 (load-theme 'doom-sora t)
 (doom-themes-visual-bell-config)
 (doom-themes-neotree-config)
