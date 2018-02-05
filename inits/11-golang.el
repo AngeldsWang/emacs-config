@@ -182,7 +182,8 @@ buffer. Tries to look for a URL at point.
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet"))
   ; Godef jump key binding
-  (local-set-key (kbd "M-.") 'godef-jump))
+  (local-set-key (kbd "M-.") 'godef-jump)
+  (local-set-key (kbd "M-*") 'pop-tag-mark))
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
 (require 'go-guru)
