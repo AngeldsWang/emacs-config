@@ -17,8 +17,8 @@
        (add-to-list 'ac-modes 'cider-mode)
        (add-to-list 'ac-modes 'cider-repl-mode)))
 
-(require 'clojure-cheatsheet)
-(define-key clojure-mode-map (kbd "C-c C-h") #'clojure-cheatsheet)
+;; (require 'clojure-cheatsheet)
+;; (define-key clojure-mode-map (kbd "C-c C-h") #'clojure-cheatsheet)
 
 (require 'clj-refactor)
 
