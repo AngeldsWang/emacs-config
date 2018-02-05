@@ -9,17 +9,18 @@
 (auctex-latexmk-setup)
 
 (add-hook 'LaTeX-mode-hook
-  (lambda()
-  (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
-  (setq TeX-command-default "XeLaTeX")
-  (setq TeX-save-querynil )
-  (setq TeX-show-compilation t)
-  (setq TeX-view-program-selection
-        '((output-dvi "Skim")
-          (output-pdf "Skim")))
-  (setq TeX-view-program-list
-        '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %s.pdf %b")))
-))
+          (lambda()
+            (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+            (setq TeX-command-default "XeLaTeX")
+            (setq TeX-save-querynil )
+            (setq TeX-show-compilation t)
+            ;; (setq TeX-view-program-selection
+            ;;       '((output-dvi "Skim")
+            ;;         (output-pdf "Skim")))
+            ;; (setq TeX-view-program-list
+            ;;       '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %s.pdf %b")))
+            ))
+
 ;; for skim, inverse search
 (require 'server)
 (unless (server-running-p) (server-start))
