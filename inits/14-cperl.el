@@ -244,4 +244,5 @@ and closing parentheses and brackets."
       (save-excursion (mark-defun) (perltidy-region)))
       (global-set-key (kbd "C-c C-t") 'perltidy-defun)
 
-(provide '12-cperl)
+
+(provide '14-cperl)

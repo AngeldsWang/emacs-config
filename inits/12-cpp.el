@@ -3,6 +3,7 @@
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.cuh\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 (add-hook 'c-mode-common-hook
           (lambda ()
             (google-set-c-style)
@@ -38,4 +39,4 @@
  ;; Non-nil means display source file containing the main routine at startup
  gdb-show-main t)
 
-(provide '14-cpp)
+(provide '12-cpp)
