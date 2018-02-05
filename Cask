@@ -118,7 +118,6 @@
 (depends-on "org-plus-contrib")
 (depends-on "pallet")
 (depends-on "pdf-tools")
-(depends-on "perl-completion")
 (depends-on "perl6-mode")
 (depends-on "php-mode")
 (depends-on "pkg-info")
