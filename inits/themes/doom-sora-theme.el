@@ -138,6 +138,10 @@ determine the exact padding."
    (magit-blame-date    :foreground red :background base5)
    (magit-blame-heading :foreground red :background base5)
 
+   ;; eww
+   (eww-invalid-certificate :inherit 'error)
+   (eww-valid-certificate   :inherit 'success)
+
    ;; org-mode
    (org-level-1
     :foreground blue :background (doom-darken bg 0.025)
