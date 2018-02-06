@@ -25,8 +25,4 @@
 ;;(setq pdf-view-midnight-colors '("#7f9f7f" . "#3f3f3f"))
 (setq pdf-view-midnight-colors '("#74B9C3" . "#3D4C55"))
 
-(setq TeX-view-program-selection '((output-pdf "pdf-tools"))
-      TeX-source-correlate-start-server t)
-(setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view")))
-
 (provide '60-pdf-tools)
