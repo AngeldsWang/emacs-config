@@ -127,7 +127,7 @@ determine the exact padding."
    (helm-candidate-number :background modeline-bg)
 
    ;; company
-   (company-tooltip-selection  :background selection :foreground dark-grey)
+   (company-tooltip-selection  :background selection :foreground red)
 
    ;; popup
    (popup-face :inherit 'tooltip)
