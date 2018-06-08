@@ -173,6 +173,11 @@ buffer. Tries to look for a URL at point.
 
 
 (defun my-go-mode-hook ()
+  ; set tab-width
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (setq tab-width 4)
+  (setq indent-tabs-mode 1)
+
   ; Use goimports instead of go-fmt
   (setq gofmt-command "goimports")
   ; Call Gofmt before saving
@@ -184,6 +189,7 @@ buffer. Tries to look for a URL at point.
   ; Godef jump key binding
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "M-*") 'pop-tag-mark))
+
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
 (require 'go-guru)
