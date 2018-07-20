@@ -11,4 +11,13 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
+(defun magit-push-to-gerrit ()
+  (interactive)
+  (magit-git-command-topdir "git push origin HEAD:refs/for/master"))
+
+(magit-define-popup-action 'magit-push-popup
+  ?m
+  "Push to gerrit"
+  'magit-push-to-gerrit)
+
 (provide '06-magit)
