@@ -13,6 +13,8 @@
 (setq markdown-command "/usr/local/bin/multimarkdown")
 ;;(setq markdown-css-paths `(,(expand-file-name "markdown.css" ~/.emacs.d/plugins)))
 
+(require 'markdown-preview-mode)
+
 (setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
 (global-set-key (kbd "C-c C-v") 'markdown-preview-mode)
 
