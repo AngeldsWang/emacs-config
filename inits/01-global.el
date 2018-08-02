@@ -93,7 +93,7 @@ Version 2017-06-02"
 
 ;; set gpg program
 (require 'epa-file)
-(custom-set-variables '(epg-gpg-program "/usr/local/opt/gnupg/libexec/gpgbin/gpg"))
+(custom-set-variables '(epg-gpg-program "/usr/local/bin/gpg"))
 (epa-file-enable)
 
 
