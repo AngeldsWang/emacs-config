@@ -20,7 +20,7 @@
 
 (setf (cdr (assoc 'continuation fringe-indicator-alist)) nil)
 
-;; test for google talk
+;; ;; test for google talk
 ;; (setq jabber-account-list
 ;;       '(("angeldsphinx@gmail.com"
 ;;          (:network-server . "talk.google.com")
@@ -49,7 +49,7 @@
 (setq circe-network-options
       '(("Freenode"
          :nick "angelds"
-         :channels (:after-auth "#emacs" "#emacs-circe" "#perl" "#perl6" "#clojure" "#go-nuts" "#docker" "#nginx" "#scheme" "##security")
+         :channels (:after-auth "#emacs" "#emacs-circe" "#perl" "#perl6" "#clojure" "#go-nuts" "#docker" "#nginx" "#scheme" "##security" "#ansible")
          :nickserv-password my-nickserv-password)
         ("Mozilla"
          :host "irc.mozilla.org"
