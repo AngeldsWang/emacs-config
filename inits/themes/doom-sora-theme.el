@@ -142,10 +142,18 @@ determine the exact padding."
    (eww-invalid-certificate :inherit 'error)
    (eww-valid-certificate   :inherit 'success)
 
+   ;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   (markdown-code-face :background (doom-lighten base3 0.09))
+
    ;; org-mode
-   (org-level-1
-    :foreground blue :background (doom-darken bg 0.025)
-    :bold bold :height 1.2))
+   (org-level-1 :foreground blue :background (doom-darken bg 0.025)
+                :bold bold :height 1.2)
+   ;; (org-block   :background (doom-lighten base3 0.09) :foreground grey-nickel)
+   (org-block   :background big-stone :foreground grey-nickel)
+   (org-block-begin-line :background big-stone :foreground comments)
+   (org-block-end-line   :background big-stone :foreground comments))
 
   ;; --- variables --------------------------
   ;; ()
