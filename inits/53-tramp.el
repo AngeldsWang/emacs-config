@@ -16,5 +16,6 @@
 
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
+(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
 
 (provide '53-tramp)
