@@ -78,11 +78,11 @@ buffer. Tries to look for a URL at point.
 
 \(fn URL)" t nil)
 
-(setenv "GOPATH" "/Users/wang-zhenjun/lgg/Go")
+(setenv "GOPATH" "/Users/wangzhenjun/Go")
 
 (setenv "PATH" (format "%s/bin:%s" (getenv "GOPATH") (getenv "PATH")))
 
-(add-to-list 'exec-path "/Users/wang-zhenjun/lgg/Go/bin")
+(add-to-list 'exec-path "/Users/wangzhenjun/Go/bin")
 
 (require 'go-autocomplete)
 (require 'auto-complete-config)
