@@ -49,7 +49,7 @@
 (setq circe-network-options
       '(("Freenode"
          :nick "angelds"
-         :channels (:after-auth "#emacs" "#emacs-circe" "#perl" "#perl6" "#clojure" "#go-nuts" "#docker" "#nginx" "#scheme" "##security" "#ansible")
+         :channels (:after-auth "#emacs" "#emacs-circe" "#perl" "#perl6" "#clojure" "#go-nuts" "#docker" "#nginx" "#scheme" "##security" "#ansible" "#redis")
          :nickserv-password my-nickserv-password)
         ("Mozilla"
          :host "irc.mozilla.org"
