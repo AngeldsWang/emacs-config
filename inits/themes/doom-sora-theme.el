@@ -153,7 +153,16 @@ determine the exact padding."
    ;; (org-block   :background (doom-lighten base3 0.09) :foreground grey-nickel)
    (org-block   :background big-stone :foreground grey-nickel)
    (org-block-begin-line :background big-stone :foreground comments)
-   (org-block-end-line   :background big-stone :foreground comments))
+   (org-block-end-line   :background big-stone :foreground comments)
+
+   ;; mu4e
+   (mu4e-unread-face :foreground red :weight 'bold)
+   (mu4e-header-key-face      :foreground orange    :weight 'bold)
+   (mu4e-header-value-face    :foreground red :weight 'bold)
+   (mu4e-contact-face         :foreground red :weight 'bold)
+   (message-header-name       :foreground orange)
+   (message-header-subject    :foreground highlight :weight 'bold)
+   (message-header-newsgroups :foreground orange))
 
   ;; --- variables --------------------------
   ;; ()
