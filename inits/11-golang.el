@@ -192,6 +192,9 @@ buffer. Tries to look for a URL at point.
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
+(with-eval-after-load 'go-mode
+  (define-key go-mode-map (kbd "C-c t") #'go-add-tags))
+
 (require 'go-guru)
 
 (provide '11-golang)
