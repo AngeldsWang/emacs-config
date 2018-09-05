@@ -55,6 +55,7 @@
                              msg '(:from :to :cc :bcc) "angeldsphinx@gmail.com")))
           :vars '((user-mail-address . "angeldsphinx@gmail.com")
                   (user-full-name . "Sphinx Angelds" )
+                  (smtpmail-smtp-user . "angeldsphinx@gmail.com")
                   (mu4e-drafts-folder . "/angeldsphinx/[Gmail]/Drafts")
                   (mu4e-sent-folder . "/angeldsphinx/[Gmail]/Sent Mail")
                   (mu4e-trash-folder . "/angeldsphinx/[Gmail]/Trash")))))
