@@ -123,7 +123,9 @@ determine the exact padding."
    ;; helm
    (helm-source-header :foreground grey-nickel :background old-rose)
    (helm-selection :inherit 'bold :foreground grey-nickel :background selection)
+   (helm-selection-line :foreground dark-grey :distant-foreground dark-grey :background orange)
    (helm-match :foreground highlight)
+   (helm-match-item :foreground dark-grey :distant-foreground dark-grey :background orange)
    (helm-candidate-number :background modeline-bg)
 
    ;; company
