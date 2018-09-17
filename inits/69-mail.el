@@ -70,8 +70,8 @@
 (setq mu4e-attachment-dir  "~/Downloads")
 (setq mu4e-headers-date-format "%Y-%m-%d [%H:%M]")
 (setq mu4e-headers-fields '((:date         . 20)
-                            (:mailing-list . 20)
-                            (:from         . 24)
+                            (:mailing-list . 14)
+                            (:from         . 20)
                             (:subject      . nil)))
 (setq mu4e-view-fields '(:from :to :cc :subject :date :mailing-list :attachments :signature))
 
