@@ -2,7 +2,12 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (setq org-ellipsis "⤵")
 
-(setq org-export-backends '(ascii html latex md icalendar)
+(require 'ox-md)
+(require 'ox-beamer)
+(require 'ox-jira)
+(require 'ox-confluence-en "./others/ox-confluence-en.el")
+
+(setq org-export-backends '(ascii icalendar html latex md confluence-en jira)
       org-export-with-toc t
       org-export-with-author t)
 
@@ -21,8 +26,5 @@
 
 ;; Don’t ask before evaluating code blocks
 (setq org-confirm-babel-evaluate nil)
-
-(require 'ox-md)
-(require 'ox-beamer)
 
 (provide '20-org)
