@@ -123,6 +123,7 @@
 (depends-on "multiple-cursors")
 (depends-on "nyan-mode")
 (depends-on "org-plus-contrib")
+(depends-on "org-bullets")
 (depends-on "pallet")
 (depends-on "pdf-tools")
 (depends-on "perl6-mode")
