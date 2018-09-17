@@ -124,6 +124,7 @@
 (depends-on "nyan-mode")
 (depends-on "org-plus-contrib")
 (depends-on "org-bullets")
+(depends-on "ox-jira")
 (depends-on "pallet")
 (depends-on "pdf-tools")
 (depends-on "perl6-mode")
