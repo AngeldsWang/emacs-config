@@ -152,10 +152,11 @@ determine the exact padding."
    ;; org-mode
    (org-level-1 :foreground blue :background (doom-darken bg 0.025)
                 :bold bold :height 1.2)
-   ;; (org-block   :background (doom-lighten base3 0.09) :foreground grey-nickel)
-   (org-block   :background big-stone :foreground grey-nickel)
-   (org-block-begin-line :background big-stone :foreground comments)
-   (org-block-end-line   :background big-stone :foreground comments)
+   (org-block   :background (doom-lighten base3 0.09) :foreground grey-nickel)
+   (org-block-begin-line :background bg :foreground comments)
+   (org-block-end-line   :background bg :foreground comments)
+   (org-quote            :background bg :slant 'italic)
+   (org-headline-done    :foreground base6)
 
    ;; mu4e
    (mu4e-unread-face :foreground red :weight 'bold)
