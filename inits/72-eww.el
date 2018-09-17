@@ -101,5 +101,6 @@
 (define-key eww-mode-map "p" 'scroll-down)
 (define-key eww-mode-map "n" 'scroll-up)
 
+(add-hook 'eww-mode-hook 'visual-line-mode)
 
 (provide '72-eww)
