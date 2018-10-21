@@ -244,5 +244,7 @@ and closing parentheses and brackets."
       (save-excursion (mark-defun) (perltidy-region)))
       (global-set-key (kbd "C-c C-t") 'perltidy-defun)
 
+;; resolve conflict with smartparens
+(add-hook 'cperl-mode-hook (lambda () (local-unset-key (kbd "{"))))
 
 (provide '14-cperl)
