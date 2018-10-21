@@ -3,7 +3,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
-;;(load-theme 'zenburn t)
+;; (load-theme 'zenburn t)
 (require 'doom-themes)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/inits/themes/")
 (load-theme 'doom-sora t)

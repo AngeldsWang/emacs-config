@@ -24,8 +24,15 @@
 
 (add-to-list 'company-backends 'company-c-headers)
 
+(global-set-key (kbd "C-x C-o") 'ff-find-other-file)
+
+(define-key c-mode-map (kbd "<f4>") #'compile)
 (define-key c++-mode-map (kbd "<f4>") #'compile)
 
+(add-hook 'c-mode-hook
+          (lambda ()
+            (setq compile-command 
+                  (concat "clang -Wall -Werror -std=c11 -ggdb -O0 " buffer-file-name " -o " (file-name-base buffer-file-name) ))))
 (add-hook 'c++-mode-hook
           (lambda ()
             (setq compile-command 
@@ -38,5 +45,14 @@
 
  ;; Non-nil means display source file containing the main routine at startup
  gdb-show-main t)
+
+(require 'clang-format)
+(custom-set-variables
+ '(clang-format-style "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 120}"))
+
+(global-set-key (kbd "C-c C-r") 'clang-format-region)
+(global-set-key (kbd "C-c C-f") 'clang-format-buffer)
+(add-hook 'c-mode-hook (lambda() (add-hook 'before-save-hook 'clang-format-buffer)))
+(add-hook 'c++-mode-hook (lambda() (add-hook 'before-save-hook 'clang-format-buffer)))
 
 (provide '12-cpp)
