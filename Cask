@@ -46,6 +46,7 @@
 (depends-on "company-tern")
 (depends-on "cperl-mode")
 (depends-on "dash")
+(depends-on "dash-at-point")
 (depends-on "docker")
 (depends-on "docker-tramp")
 (depends-on "dockerfile-mode")
