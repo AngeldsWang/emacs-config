@@ -127,6 +127,10 @@ determine the exact padding."
    (helm-match :foreground highlight)
    (helm-match-item :foreground dark-grey :distant-foreground dark-grey :background orange)
    (helm-candidate-number :background modeline-bg)
+   (helm-swoop-target-line-face       :foreground orange :inverse-video t)
+   (helm-swoop-target-line-block-face :foreground yellow)
+   (helm-swoop-target-word-face       :foreground orange :inherit 'bold)
+   (helm-swoop-target-number-face     :foreground base5)
 
    ;; company
    (company-tooltip-selection  :background selection :foreground red)
