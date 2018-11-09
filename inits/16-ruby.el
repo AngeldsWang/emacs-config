@@ -90,7 +90,7 @@
 
 
 ;;; ERB
-(require-package 'mmm-mode)
+(require 'mmm-mode)
 (defun sanityinc/ensure-mmm-erb-loaded ()
   (require 'mmm-erb))
 
