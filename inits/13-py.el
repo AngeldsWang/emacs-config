@@ -7,4 +7,8 @@
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
+
+
 (provide '13-py)
