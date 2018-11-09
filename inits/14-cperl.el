@@ -220,6 +220,7 @@ and closing parentheses and brackets."
      ))
 
 (require 'quickrun)
+(setq quickrun-timeout-seconds nil)
 
 (eval-after-load "cperl-mode"
   '(progn
