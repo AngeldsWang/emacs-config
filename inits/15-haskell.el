@@ -2,10 +2,10 @@
 (require 'haskell-mode)
 (require 'hindent)
 (require 'haskell-process)
-(require 'haskell-simple-indent)
+(require 'haskell-simple-indent "./others/haskell-simple-indent.el")
 (require 'haskell-interactive-mode)
 (require 'haskell-font-lock)
-
+(require 'shm)
 
 (defun haskell-process-all-types ()
   "List all types in a grep-mode buffer."
