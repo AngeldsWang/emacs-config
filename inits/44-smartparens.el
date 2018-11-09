@@ -22,7 +22,8 @@
   (sp-local-pair 'sh-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
   (sp-local-pair 'rust-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
   (sp-local-pair 'js2-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
-  (sp-local-pair 'ruby-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET"))))
+  (sp-local-pair 'ruby-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET")))
+  (sp-local-pair 'nginx-mode "{" nil :post-handlers '((my-create-newline-and-enter-sexp "RET"))))
 
 (customize-smartparens)
 
