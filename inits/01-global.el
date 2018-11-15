@@ -14,7 +14,7 @@
 (scroll-bar-mode -1)
 (eval-when-compile (require 'cl))
 ;; font and size
-(set-default-font "hack-9")
+(set-frame-font "hack-10")
 ;; code indentation
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -24,10 +24,10 @@
 (setq indent-line-function 'insert-tab)
 
 (defun hack9 ()
-  (interactive (set-default-font "hack-9")))
+  (interactive (set-frame-font "hack-9")))
 
 (defun hack10 ()
-  (interactive (set-default-font "hack-10")))
+  (interactive (set-frame-font "hack-10")))
 
 ;; copy (M + w) and cut (C + w) without selection
 (defun slick-cut (beg end)
