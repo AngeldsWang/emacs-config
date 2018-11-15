@@ -38,6 +38,8 @@
 (defun shr-put-image-alt (spec alt &optional flags)
   (insert alt))
 
+(setq shr-max-image-proportion 0.7)
+
 ;; (defun eww-mode-hook-disable-image ()
 ;;   (setq-local shr-put-image-function 'shr-put-image-alt))
 ;; (add-hook 'eww-mode-hook 'eww-mode-hook-disable-image)
@@ -101,6 +103,17 @@
 (define-key eww-mode-map "p" 'scroll-down)
 (define-key eww-mode-map "n" 'scroll-up)
 
+
 (add-hook 'eww-mode-hook 'visual-line-mode)
+
+;; add a local hook for automatical rewrapping lines when zoom in/out
+(defun my/text-scale-mode-hook ()
+  (eww-reload :local))
+
+(add-hook 'eww-mode-hook
+          (lambda()
+            (add-hook 'text-scale-mode-hook
+                      'my/text-scale-mode-hook
+                      nil :local)))
 
 (provide '72-eww)
