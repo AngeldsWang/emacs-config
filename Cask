@@ -92,6 +92,7 @@
 (depends-on "google-c-style")
 (depends-on "grizzl")
 (depends-on "graphviz-dot-mode")
+(depends-on "hackernews")
 (depends-on "haskell-mode")
 (depends-on "helm")
 (depends-on "helm-ag")
@@ -187,4 +188,5 @@
 (depends-on "yagist")
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
+(depends-on "youdao-dictionary")
 (depends-on "zenburn-theme")
