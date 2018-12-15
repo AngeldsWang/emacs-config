@@ -214,4 +214,14 @@ locate PACKAGE."
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
+;; print full value
+(setq eval-expression-print-level nil)
+(setq eval-expression-print-length nil)
+
+;; json-unpretty-print
+;; require jq preinstalled
+(defun json-unpretty-print (beg end)
+  (interactive "r")
+  (shell-command-on-region beg end "jq -c ." nil t))
+
 (provide '01-global)
