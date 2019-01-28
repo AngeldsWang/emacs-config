@@ -29,24 +29,6 @@
 (defun hack10 ()
   (interactive (set-frame-font "hack-10")))
 
-;; copy (M + w) and cut (C + w) without selection
-(defun slick-cut (beg end)
-  (interactive
-   (if mark-active
-       (list (region-beginning) (region-end))
-     (list (line-beginning-position) (line-beginning-position 2)))))
-
-(advice-add 'kill-region :before #'slick-cut)
-
-(defun slick-copy (beg end)
-  (interactive
-   (if mark-active
-       (list (region-beginning) (region-end))
-     (message "Copied line")
-     (list (line-beginning-position) (line-beginning-position 2)))))
-
-(advice-add 'kill-ring-save :before #'slick-copy)
-
 (defun toggle-line-spacing ()
   "Toggle line spacing between no extra space to extra half line height.
 URL `http://ergoemacs.org/emacs/emacs_toggle_line_spacing.html'
@@ -84,6 +66,9 @@ Version 2017-06-02"
 (global-company-mode)
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 (add-to-list 'company-backends 'company-tern)
+
+(require 'flycheck)
+(global-flycheck-mode)
 
 (require 'desktop)
 (setq desktop-path (list "~/.emacs-server"))
