@@ -4,6 +4,11 @@
   (setq exec-path-from-shell-check-startup-files nil)
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "PATH")
-  (exec-path-from-shell-copy-env "GOPATH"))
+  (exec-path-from-shell-copy-env "GOPATH")
+  (exec-path-from-shell-copy-env "LANG")
+  (exec-path-from-shell-copy-env "LANGUAGE")
+  (exec-path-from-shell-copy-env "LC_CTYPE")
+  (exec-path-from-shell-copy-env "LC_NAME")
+  (exec-path-from-shell-copy-env "LC_ALL"))
 
 (provide '05-exec-path-from-shell)
