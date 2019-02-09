@@ -242,8 +242,20 @@ and closing parentheses and brackets."
 (defun perltidy-defun ()
   "Run perltidy on the current defun."
     (interactive)
-      (save-excursion (mark-defun) (perltidy-region)))
-      (global-set-key (kbd "C-c C-t") 'perltidy-defun)
+    (save-excursion (mark-defun) (perltidy-region)))
+
+(global-set-key (kbd "C-c C-t") 'perltidy-defun)
+
+(defun perltidy-buffer () "Run perltidy on current buffer."
+       (interactive)
+       (if (executable-find "perltidy")
+           (let ((where_i_was (point)))
+             (shell-command-on-region (point-min) (point-max) "perltidy -q" nil t)
+             (goto-char where_i_was))
+         (message "Unable to find perltidy")))
+
+(add-hook 'cperl-mode-hook
+          (lambda () (add-hook 'before-save-hook 'perltidy-buffer nil t)))
 
 ;; resolve conflict with smartparens
 (add-hook 'cperl-mode-hook (lambda () (local-unset-key (kbd "{"))))
