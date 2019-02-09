@@ -169,7 +169,11 @@ determine the exact padding."
    (mu4e-contact-face         :foreground red :weight 'bold)
    (message-header-name       :foreground orange)
    (message-header-subject    :foreground highlight :weight 'bold)
-   (message-header-newsgroups :foreground orange))
+   (message-header-newsgroups :foreground orange)
+
+   ;; ansible
+   (ansible::task-label-face :foreground yellow)
+   (ansible::section-face :foreground old-rose))
 
   ;; --- variables --------------------------
   ;; ()
