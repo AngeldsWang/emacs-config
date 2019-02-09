@@ -9,13 +9,14 @@
 (setq web-mode-enable-auto-opening t)
 (setq web-mode-enable-auto-indentation t)
 
-(add-to-list 'auto-mode-alist '("\\.tt$"   . web-mode))
-(add-to-list 'auto-mode-alist '("\\.gtpl$" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tx$"   . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb$"  . web-mode))
-(add-to-list 'auto-mode-alist '("\\.twig$" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mt$"   . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tt$"          . web-mode))
+(add-to-list 'auto-mode-alist '("\\.gtpl$"        . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tx$"          . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html$"        . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb$"         . web-mode))
+(add-to-list 'auto-mode-alist '("\\.twig$"        . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mt$"          . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\.j2$"   . web-mode))
 
 ;; bind engines
 (setq web-mode-engines-alist
