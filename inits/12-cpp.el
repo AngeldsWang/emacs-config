@@ -11,8 +11,15 @@
             (setq c-basic-offset 4)
             (electric-pair-mode -1)))
 
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
+(require 'irony)
+(defun my-irony-mode-on ()
+  ;; avoid enabling irony-mode in modes that inherits c-mode, e.g: php-mode
+  (when (member major-mode irony-supported-major-modes)
+    (irony-mode 1)))
+
+(add-hook 'c-mode-hook 'my-irony-mode-on)
+(add-hook 'c++-mode-hook 'my-irony-mode-on)
+(add-hook 'objc-mode-hook 'my-irony-mode-on)
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
