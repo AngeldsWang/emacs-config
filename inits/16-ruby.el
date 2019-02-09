@@ -59,6 +59,9 @@
 (after-load 'ruby-mode
   (add-hook 'ruby-mode-hook 'robe-mode))
 
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+
 (defun sanityinc/maybe-enable-robe-ac ()
   "Enable/disable robe auto-complete source as necessary."
   (if robe-mode
