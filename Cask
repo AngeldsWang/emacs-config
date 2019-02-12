@@ -180,6 +180,7 @@
 (depends-on "toml-mode")
 (depends-on "use-package")
 (depends-on "vagrant-tramp")
+(depends-on "vcl-mode")
 (depends-on "vue-mode")
 (depends-on "w3m")
 (depends-on "web-mode")
