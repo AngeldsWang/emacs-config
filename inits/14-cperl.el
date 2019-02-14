@@ -260,4 +260,23 @@ and closing parentheses and brackets."
 ;; resolve conflict with smartparens
 (add-hook 'cperl-mode-hook (lambda () (local-unset-key (kbd "{"))))
 
+(require 'flycheck)
+(flycheck-define-checker perl-project-libs
+  "A perl syntax checker."
+  :command ("perl5.28.1"
+            "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]"
+            "-wc"
+            source-inplace)
+  :error-patterns ((error line-start
+                          (minimal-match (message))
+                          " at " (file-name) " line " line
+                          (or "." (and ", " (zero-or-more not-newline)))
+                          line-end))
+  :modes (cperl-mode))
+
+(add-hook 'cperl-mode-hook
+          (lambda ()
+            (flycheck-mode t)
+            (setq flycheck-checker 'perl-project-libs)))
+
 (provide '14-cperl)
