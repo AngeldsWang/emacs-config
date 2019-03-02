@@ -63,4 +63,8 @@
 (add-hook 'c-mode-hook (lambda() (add-hook 'before-save-hook 'clang-format-buffer nil t)))
 (add-hook 'c++-mode-hook (lambda() (add-hook 'before-save-hook 'clang-format-buffer nil t)))
 
+(require 'flycheck)
+(add-hook 'c-mode-hook (lambda () (setq flycheck-clang-language-standard "c11")))
+(add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
+
 (provide '12-cpp)

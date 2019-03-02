@@ -69,6 +69,11 @@ Version 2017-06-02"
 
 (require 'flycheck)
 (global-flycheck-mode)
+(with-eval-after-load 'flycheck
+  (setq-default flycheck-disabled-checkers '(
+                                             emacs-lisp-checkdoc
+                                             go-golint
+                                             )))
 
 (require 'desktop)
 (setq desktop-path (list "~/.emacs-server"))
