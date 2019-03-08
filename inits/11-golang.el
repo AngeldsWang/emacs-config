@@ -1,11 +1,8 @@
 (require 'go-mode)
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
 
-(setenv "GOPATH" "/Users/wangzhenjun/Go")
-
-(setenv "PATH" (format "%s/bin:%s" (getenv "GOPATH") (getenv "PATH")))
-
-(add-to-list 'exec-path "/Users/wangzhenjun/Go/bin")
+(setenv "GOPATH" (concat (getenv "HOME") "/Go"))
+(add-to-list 'exec-path (concat (getenv "GOPATH") "/bin"))
 
 (require 'go-autocomplete)
 (require 'auto-complete-config)
