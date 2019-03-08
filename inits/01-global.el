@@ -75,6 +75,10 @@ Version 2017-06-02"
                                              go-golint
                                              )))
 
+(let ((govet (flycheck-checker-get 'go-vet 'command)))
+  (when (equal (cadr govet) "tool")
+    (setf (cdr govet) (cddr govet))))
+
 (require 'desktop)
 (setq desktop-path (list "~/.emacs-server"))
 (desktop-save-mode 1)
@@ -213,5 +217,11 @@ locate PACKAGE."
 (defun json-unpretty-print (beg end)
   (interactive "r")
   (shell-command-on-region beg end "jq -c ." nil t))
+
+(defun byte-offset-at-point ()
+  "Report the byte offset (0-indexed) in the file
+corresponding to the position of point."
+  (interactive)
+  (message "byte offset: %d" (1- (position-bytes (point)))))
 
 (provide '01-global)
