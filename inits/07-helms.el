@@ -36,7 +36,8 @@
 
 (custom-set-variables
  '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
- '(helm-ag-command-option "--all-text --hidden")
+ '(helm-ag-command-option (format "--path-to-ignore %s --all-text --hidden"
+                                  (concat (getenv "HOME") "/.agignore")))
  '(helm-ag-insert-at-point 'symbol)
  '(helm-ag-use-agignore t))
 
