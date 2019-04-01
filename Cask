@@ -130,6 +130,7 @@
 (depends-on "mu4e-alert")
 (depends-on "multiple-cursors")
 (depends-on "nginx-mode")
+(depends-on "nov")
 (depends-on "nyan-mode")
 (depends-on "ob-mermaid")
 (depends-on "org-plus-contrib")
