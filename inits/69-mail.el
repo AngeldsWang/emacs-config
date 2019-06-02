@@ -13,14 +13,14 @@
       mu4e-update-interval 300
       mu4e-view-show-addresses t)
 
-;; smtp
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-starttls-credentials
-      '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587
-      smtpmail-debug-info t)
+;; ;; smtp
+;; (setq message-send-mail-function 'smtpmail-send-it
+;;       smtpmail-starttls-credentials
+;;       '(("smtp.gmail.com" 587 nil nil))
+;;       smtpmail-default-smtp-server "smtp.gmail.com"
+;;       smtpmail-smtp-server "smtp.gmail.com"
+;;       smtpmail-smtp-service 587
+;;       smtpmail-debug-info t)
 
 ;; (defun my-make-mu4e-context (name address signature)
 ;;     "Return a mu4e context named NAME with :match-func matching
@@ -58,7 +58,36 @@
                   (smtpmail-smtp-user . "angeldsphinx@gmail.com")
                   (mu4e-drafts-folder . "/angeldsphinx/[Gmail]/Drafts")
                   (mu4e-sent-folder . "/angeldsphinx/[Gmail]/Sent Mail")
-                  (mu4e-trash-folder . "/angeldsphinx/[Gmail]/Trash")))))
+                  (mu4e-trash-folder . "/angeldsphinx/[Gmail]/Trash")
+
+                  (message-send-mail-function . smtpmail-send-it)
+                  (smtpmail-starttls-credentials . '(("smtp.gmail.com" 587 nil nil)))
+                  (smtpmail-default-smtp-server . "smtp.gmail.com")
+                  (smtpmail-smtp-server . "smtp.gmail.com")
+                  (smtpmail-smtp-service . 587)
+                  (smtpmail-debug-info . t)))
+        ,(make-mu4e-context
+          :name "WZJMIT"
+          :enter-func (lambda () (mu4e-message "Entering context wzjmit@gmail.com"))
+          :leave-func (lambda () (mu4e-message "Leaving context wzjmit@gmail.com"))
+          :match-func (lambda (msg)
+                        (or (null msg)
+                            (mu4e-message-contact-field-matches
+                             msg '(:from :to :cc :bcc) "wzjmit@gmail.com")))
+          :vars '((user-mail-address . "wzjmit@gmail.com")
+                  (user-full-name . "WZJMIT" )
+                  (smtpmail-smtp-user . "wzjmit@gmail.com")
+                  (mu4e-drafts-folder . "/wzjmit/[Gmail]/Drafts")
+                  (mu4e-sent-folder . "/wzjmit/[Gmail]/Sent Mail")
+                  (mu4e-trash-folder . "/wzjmit/[Gmail]/Trash")
+
+                  (message-send-mail-function . smtpmail-send-it)
+                  (smtpmail-starttls-credentials . '(("smtp.gmail.com" 587 nil nil)))
+                  (smtpmail-default-smtp-server . "smtp.gmail.com")
+                  (smtpmail-smtp-server . "smtp.gmail.com")
+                  (smtpmail-smtp-service . 587)
+                  (smtpmail-debug-info . t)))
+        ))
 
 (setq mu4e-user-mail-address-list
       (delq nil (mapcar (lambda (context)
@@ -81,6 +110,11 @@
   (mu4e-alert-enable-notifications)
   (mu4e-alert-set-default-style 'notifier))
 
+;; don't keep message buffers around
+(setq message-kill-buffer-on-exit t)
+(setq mu4e-context-policy 'pick-first)
+;; compose with the current context
+(setq mu4e-compose-context-policy 'always-ask)
 
 
 (provide '69-mail)
