@@ -44,6 +44,7 @@
 (depends-on "company-c-headers")
 (depends-on "company-emacs-eclim")
 (depends-on "company-irony")
+(depends-on "company-irony-c-headers")
 (depends-on "company-jedi")
 (depends-on "company-tern")
 (depends-on "cperl-mode")

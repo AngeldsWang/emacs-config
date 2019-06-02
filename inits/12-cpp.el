@@ -23,8 +23,9 @@
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
+(require 'company-irony-c-headers)
 (eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
+  '(add-to-list 'company-backends '(company-irony-c-headers company-irony)))
 
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
@@ -66,5 +67,9 @@
 (require 'flycheck)
 (add-hook 'c-mode-hook (lambda () (setq flycheck-clang-language-standard "c11")))
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
+(add-hook 'c++-mode-hook
+          (lambda () (setq flycheck-clang-include-path
+                           (list "." (expand-file-name "/Library/Developer/CommandLineTools/usr/include/c++/v1")))))
+
 
 (provide '12-cpp)
