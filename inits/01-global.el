@@ -23,11 +23,10 @@
 (global-hl-line-mode 1)
 (setq indent-line-function 'insert-tab)
 
-(defun hack9 ()
-  (interactive (set-frame-font "hack-9")))
+(dolist (fsize '("10" "11" "12" "13" "14" "15" "16"))
+  (defalias (intern (concat "hack" fsize))
+    `(lambda () (interactive) (set-frame-font (concat "hack-" ,fsize)))))
 
-(defun hack10 ()
-  (interactive (set-frame-font "hack-10")))
 
 (defun toggle-line-spacing ()
   "Toggle line spacing between no extra space to extra half line height.
