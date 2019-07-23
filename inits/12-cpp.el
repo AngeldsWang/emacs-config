@@ -61,8 +61,8 @@
 (global-set-key (kbd "C-c C-r") 'clang-format-region)
 (global-set-key (kbd "C-c C-f") 'clang-format-buffer)
 
-(add-hook 'c-mode-hook (lambda() (add-hook 'before-save-hook 'clang-format-buffer nil t)))
-(add-hook 'c++-mode-hook (lambda() (add-hook 'before-save-hook 'clang-format-buffer nil t)))
+;; (add-hook 'c-mode-hook (lambda() (add-hook 'before-save-hook 'clang-format-buffer nil t)))
+;; (add-hook 'c++-mode-hook (lambda() (add-hook 'before-save-hook 'clang-format-buffer nil t)))
 
 (require 'flycheck)
 (add-hook 'c-mode-hook (lambda () (setq flycheck-clang-language-standard "c11")))
