@@ -5,6 +5,7 @@
 (require 'ox-md)
 (require 'ox-beamer)
 (require 'ox-jira)
+(require 'ox-reveal)
 (require 'ox-confluence-en "./others/ox-confluence-en.el")
 
 (setq org-export-backends '(ascii icalendar html latex md confluence-en jira)
@@ -34,3 +35,4 @@
 	      (lambda () (local-set-key (kbd "C-c C-p") 'org-toggle-inline-images)))
 
 (provide '20-org)
+
