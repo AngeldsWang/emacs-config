@@ -117,4 +117,10 @@
 
 (require 'go-guru)
 
+(defun asm-mode-setup ()
+  (set (make-local-variable 'gofmt-command) "asmfmt")
+  (add-hook 'before-save-hook 'gofmt nil t)
+)
+(add-hook 'asm-mode-hook 'asm-mode-setup)
+
 (provide '11-golang)
