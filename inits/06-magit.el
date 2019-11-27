@@ -1,11 +1,5 @@
 (require 'magit)
 
-;; (defun magit-quit-session ()
-;;   "Restore the previous window configuration and kill the magit buffer."
-;;   (interactive)
-;;   (kill-buffer)
-;;   (jump-to-register :magit-fullscreen))
-
 (define-key magit-status-mode-map (kbd "q") 'magit-mode-bury-buffer)
 
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -18,9 +12,7 @@
   (interactive)
   (magit-git-command-topdir "git push origin HEAD:refs/for/master"))
 
-(magit-define-popup-action 'magit-push-popup
-  ?m
-  "Push to gerrit"
-  'magit-push-to-gerrit)
+(transient-append-suffix 'magit-push "m"
+  '("g" "Push to gerrit" magit-push-to-gerrit))
 
 (provide '06-magit)
