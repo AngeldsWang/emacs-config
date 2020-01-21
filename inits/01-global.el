@@ -223,4 +223,11 @@ corresponding to the position of point."
   (interactive)
   (message "byte offset: %d" (1- (position-bytes (point)))))
 
+(require 'midnight)
+(setq clean-buffer-list-delay-general 1)
+
+(with-eval-after-load 'midnight
+  (add-to-list 'clean-buffer-list-kill-regexps "\\*helm")
+  (add-to-list 'clean-buffer-list-kill-regexps "\\*magit"))
+
 (provide '01-global)
