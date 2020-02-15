@@ -1,6 +1,6 @@
 ;;; Basic ruby setup
-(require-package 'ruby-mode)
-(require-package 'ruby-hash-syntax)
+(require 'ruby-mode)
+(require 'ruby-hash-syntax)
 
 (add-auto-mode 'ruby-mode
                "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
@@ -28,8 +28,8 @@
   (push 'ruby-mode page-break-lines-modes))
 
 ;;; Inferior ruby
-(require-package 'inf-ruby)
-(require-package 'ac-inf-ruby)
+(require 'inf-ruby)
+(require 'ac-inf-ruby)
 (after-load 'auto-complete
   (add-to-list 'ac-modes 'inf-ruby-mode))
 (add-hook 'inf-ruby-mode-hook 'ac-inf-ruby-enable)
@@ -37,13 +37,14 @@
   (define-key inf-ruby-mode-map (kbd "TAB") 'auto-complete))
 
 (require 'inf-ruby)
-  (setq inf-ruby-default-implementation "pry")
-  (setq inf-ruby-eval-binding "Pry.toplevel_binding")
-  (add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on)
+(setq inf-ruby-default-implementation "pry")
+(setq inf-ruby-eval-binding "Pry.toplevel_binding")
+(add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on)
+(global-set-key (kbd "C-c C-p") 'inf-ruby)
 
 
 ;;; Ruby compilation
-(require-package 'ruby-compilation)
+(require 'ruby-compilation)
 
 (after-load 'ruby-mode
   (let ((m ruby-mode-map))
@@ -55,9 +56,10 @@
 
 
 ;;; Robe
-(require-package 'robe)
+(require 'robe)
 (after-load 'ruby-mode
   (add-hook 'ruby-mode-hook 'robe-mode))
+(add-hook 'robe-mode-hook 'ac-robe-setup)
 
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
@@ -71,7 +73,8 @@
     (remove-hook 'ac-sources 'ac-source-robe)))
 
 (after-load 'robe
-  (add-hook 'robe-mode-hook 'sanityinc/maybe-enable-robe-ac))
+  (add-hook 'robe-mode-hook 'sanityinc/maybe-enable-robe-ac)
+  (add-hook 'robe-mode-hook (lambda() (local-set-key (kbd "M-*") 'pop-tag-mark))))
 
 
 ;; Customise highlight-symbol to not highlight do/end/class/def etc.
@@ -83,13 +86,12 @@
 
 
 ;;; ri support
-(require-package 'yari)
+(require 'yari)
 (defalias 'ri 'yari)
 
 
 ;;; YAML
-
-(require-package 'yaml-mode)
+(require 'yaml-mode)
 
 
 ;;; ERB
@@ -128,7 +130,7 @@
 
 ;; Needs to run after rinari to avoid clobbering font-lock-keywords?
 
-;; (require-package 'mmm-mode)
+;; (require 'mmm-mode)
 ;; (eval-after-load 'mmm-mode
 ;;   '(progn
 ;;      (mmm-add-classes
