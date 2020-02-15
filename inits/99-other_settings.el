@@ -63,4 +63,24 @@
 (add-hook 'lua-mode-hook 'my-setup-develop-environment)
 (add-hook 'web-mode-hook 'my-setup-develop-environment)
 
+
+(require 'string-inflection)
+;; default
+(global-set-key (kbd "C-c C-u") 'string-inflection-all-cycle)
+(global-set-key (kbd "C-c C-c") 'string-inflection-camelcase)        ;; Force to CamelCase
+(global-set-key (kbd "C-c C-l") 'string-inflection-lower-camelcase)  ;; Force to lowerCamelCase
+(global-set-key (kbd "C-c C-s") 'string-inflection-underscore)       ;; Force to snakeCase
+;; for ruby
+(add-hook 'ruby-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-c C-u") 'string-inflection-ruby-style-cycle)))
+;; for java
+(add-hook 'java-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-c C-u") 'string-inflection-java-style-cycle)))
+;; for python
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-c C-u") 'string-inflection-python-style-cycle)))
+
 (provide '99-other_settings)

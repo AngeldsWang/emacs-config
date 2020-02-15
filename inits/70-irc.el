@@ -4,7 +4,7 @@
 (require 'circe-color-nicks)
 (enable-circe-color-nicks)
 
-;;(setq auth-source-debug t)
+;; (setq auth-source-debug t)
 
 (setq
  lui-time-stamp-position 'right-margin
@@ -32,6 +32,7 @@
       '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
 
 (defun my-fetch-password (&rest params)
+  (require 'auth-source)
   (let ((match (car (apply 'auth-source-search params))))
     (if match
         (let ((secret (plist-get match :secret)))
@@ -48,8 +49,9 @@
 
 (setq circe-network-options
       '(("Freenode"
+         :tls t
          :nick "angelds"
-         :channels (:after-auth "#emacs" "#emacs-circe" "#perl" "#perl6" "#raku" "#moarvm" "#clojure" "#go-nuts" "#docker" "#nginx" "#scheme" "##security" "#ansible" "#redis")
+         :channels (:after-auth "#emacs" "#emacs-circe" "#ruby" "#perl" "#perl6" "#raku" "#moarvm" "#clojure" "#go-nuts" "#docker" "#nginx" "#scheme" "##security" "#ansible" "#redis")
          :nickserv-password my-nickserv-password)
         ("Mozilla"
          :host "irc.mozilla.org"
