@@ -1,5 +1,5 @@
 ;; add load-path
-(add-to-list 'load-path "/usr/local/Cellar/mu/1.0/share/emacs/site-lisp/mu/mu4e")
+(add-to-list 'load-path "/usr/local/Cellar/mu/1.4.10/share/emacs/site-lisp/mu/mu4e")
 
 (require 'mu4e)
 (require 'smtpmail)

@@ -172,8 +172,8 @@ determine the exact padding."
    (message-header-newsgroups :foreground orange)
 
    ;; ansible
-   (ansible::task-label-face :foreground yellow)
-   (ansible::section-face :foreground old-rose))
+   (ansible-task-label-face :foreground yellow)
+   (ansible-section-face :foreground old-rose))
 
   ;; --- variables --------------------------
   ;; ()
