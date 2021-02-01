@@ -3,7 +3,7 @@
 (require 'ruby-hash-syntax)
 
 (add-auto-mode 'ruby-mode
-               "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
+               "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'" "\\.rbs\\'"
                "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'" "\\.ru\\'"
                "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'")
 
@@ -84,6 +84,10 @@
        (list (concat "\\_<" (regexp-opt '("do" "end")) "\\_>"))))
 (add-hook 'ruby-mode-hook 'sanityinc/suppress-ruby-mode-keyword-highlights)
 
+(require 'rubocop)
+(require 'rubocopfmt)
+(add-hook 'ruby-mode-hook #'rubocopfmt-mode)
+(setq rubocopfmt-use-bundler-when-possible nil)
 
 ;;; ri support
 (require 'yari)

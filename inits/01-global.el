@@ -4,9 +4,12 @@
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
 ;; (load-theme 'zenburn t)
+;; (load-theme 'nord t)
+
 (require 'doom-themes)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/inits/themes/")
 (load-theme 'doom-sora t)
+
 (doom-themes-visual-bell-config)
 (doom-themes-neotree-config)
 (doom-themes-org-config)
@@ -23,7 +26,7 @@
 (global-hl-line-mode 1)
 (setq indent-line-function 'insert-tab)
 
-(dolist (fsize '("10" "11" "12" "13" "14" "15" "16"))
+(dolist (fsize '("9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24"))
   (defalias (intern (concat "hack" fsize))
     `(lambda () (interactive) (set-frame-font (concat "hack-" ,fsize)))))
 
