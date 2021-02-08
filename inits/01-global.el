@@ -3,13 +3,27 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
+;; keybinds
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'hyper)
+(global-set-key [(hyper a)] 'mark-whole-buffer)
+(global-set-key [(hyper v)] 'yank)
+(global-set-key [(hyper c)] 'kill-ring-save)
+(global-set-key [(hyper x)] 'kill-region)
+(global-set-key [(hyper k)] 'kill-this-buffer)
+(global-set-key [(hyper s)] 'save-buffer)
+(global-set-key [(hyper l)] 'goto-line)
+(global-set-key [(hyper w)]
+                (lambda () (interactive) (delete-window)))
+(global-set-key [(hyper z)] 'undo)
+(global-set-key [(hyper q)] 'save-buffers-kill-emacs)
+
+;; themes
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'nord t)
-
 (require 'doom-themes)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/inits/themes/")
 (load-theme 'doom-sora t)
-
 (doom-themes-visual-bell-config)
 (doom-themes-neotree-config)
 (doom-themes-org-config)
