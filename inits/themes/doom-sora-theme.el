@@ -11,6 +11,7 @@ determine the exact padding."
   :group 'doom-sora-theme
   :type '(or integer boolean))
 
+
 (def-doom-theme doom-sora
   "A light theme inspired by Trevord Miller's Sora. See
 <https://trevordmiller.com/projects/sora>."
@@ -121,6 +122,7 @@ determine the exact padding."
    (solaire-hl-line-face :inherit 'hl-line :background current-line)
 
    ;; helm
+   (helm-ff-file-extension :foreground old-rose)
    (helm-source-header :foreground grey-nickel :background old-rose)
    (helm-selection :inherit 'bold :foreground grey-nickel :background selection)
    (helm-selection-line :foreground dark-grey :distant-foreground dark-grey :background orange)
@@ -143,6 +145,7 @@ determine the exact padding."
    ;; magit
    (magit-blame-date    :foreground red :background base5)
    (magit-blame-heading :foreground red :background base5)
+   (magit-header-line   :foreground red :weight 'bold :background bg)
 
    ;; eww
    (eww-invalid-certificate :inherit 'error)

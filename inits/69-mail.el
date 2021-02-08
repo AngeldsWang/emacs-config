@@ -1,5 +1,5 @@
 ;; add load-path
-(add-to-list 'load-path "/usr/local/Cellar/mu/1.4.10/share/emacs/site-lisp/mu/mu4e")
+(add-to-list 'load-path "/usr/local/Cellar/mu/1.4.13/share/emacs/site-lisp/mu/mu4e")
 
 (require 'mu4e)
 (require 'smtpmail)
@@ -105,6 +105,8 @@
 (setq mu4e-view-fields '(:from :to :cc :subject :date :mailing-list :attachments :signature))
 
 ;; mu4e-alert
+(setq display-time-mail-icon
+      (find-image '((:type pbm :file "letter.pbm" :ascent center :foreground "#c5c8c6" :background "#3c4c55"))))
 (with-eval-after-load 'mu4e
   (mu4e-alert-enable-mode-line-display)
   (mu4e-alert-enable-notifications)
