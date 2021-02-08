@@ -198,6 +198,7 @@
 (depends-on "thrift")
 (depends-on "tide")
 (depends-on "toml-mode")
+(depends-on "tuareg")
 (depends-on "typescript-mode")
 (depends-on "use-package")
 (depends-on "vagrant-tramp")
