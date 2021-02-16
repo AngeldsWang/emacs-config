@@ -261,9 +261,12 @@ and closing parentheses and brackets."
 (add-hook 'cperl-mode-hook (lambda () (local-unset-key (kbd "{"))))
 
 (require 'flycheck)
+;; add current directory to include path manually
+(setq flycheck-perl-include-path `(,(magit-toplevel)))
 (flycheck-define-checker perl-project-libs
   "A perl syntax checker."
-  :command ("perl5.28.1"
+  :command ("perl"
+            (option-list "-I" flycheck-perl-include-path)
             "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]"
             "-wc"
             source-inplace)
