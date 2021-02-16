@@ -1,7 +1,6 @@
 (require 'helm-gtags)
 (add-hook 'c-mode-hook (lambda () (helm-gtags-mode)))
 (add-hook 'c++-mode-hook (lambda () (helm-gtags-mode)))
-(add-hook 'go-mode-hook (lambda () (helm-gtags-mode)))
 (add-hook 'python-mode-hook (lambda () (helm-gtags-mode)))  
 (add-hook 'ruby-mode-hook (lambda () (helm-gtags-mode)))    
 (add-hook 'cperl-mode-hook (lambda () (helm-gtags-mode)))                     
