@@ -176,7 +176,12 @@ determine the exact padding."
 
    ;; ansible
    (ansible-task-label-face :foreground yellow)
-   (ansible-section-face :foreground old-rose))
+   (ansible-section-face :foreground old-rose)
+
+   ;; ml
+   (merlin-type-face :foreground fg-alt :background old-rose)
+
+   )
 
   ;; --- variables --------------------------
   ;; ()
