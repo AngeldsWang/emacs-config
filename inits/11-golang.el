@@ -1,14 +1,15 @@
 (add-to-list 'exec-path (concat (getenv "GOPATH") "/bin"))
-(defun lsp-go-install-save-hooks()
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t))
 
 (use-package go-mode
   :ensure t
   :mode (("\\.go\\'" . go-mode))
   :init
   (setq gofmt-command "goimports")
-  (add-hook 'go-mode-hook #'lsp-go-install-save-hooks))
+  (add-hook 'before-save-hook 'gofmt-before-save))
+
+;; go-tags
+(with-eval-after-load 'go-mode
+  (define-key go-mode-map (kbd "C-c t") #'go-add-tags))
 
 (require 'go-guru)
 (defun asm-mode-setup ()
