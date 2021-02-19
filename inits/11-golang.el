@@ -18,8 +18,11 @@
 )
 (add-hook 'asm-mode-hook 'asm-mode-setup)
 
-;; ensure `Go' to be upper case to make gopls happy
+
 (require 'go-playground)
+;; ensure `Go' to be upper case to make gopls happy
 (setq go-playground-basedir (expand-file-name "~/Go/src/playground"))
+;; disable modules
+(setq go-playground-init-command "")
 
 (provide '11-golang)
