@@ -4,6 +4,7 @@
 (add-to-list 'auto-mode-alist '("\\.cuh\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+
 (add-hook 'c-mode-common-hook
           (lambda ()
             (google-set-c-style)
@@ -71,5 +72,12 @@
           (lambda () (setq flycheck-clang-include-path
                            (list "." (expand-file-name "/Library/Developer/CommandLineTools/usr/include/c++/v1")))))
 
+;; cmake
+(require 'cmake-mode)
+
+(setq auto-mode-alist
+      (append '(("CMakeLists\\.txt\\'" . cmake-mode)
+                ("\\.cmake\\'" . cmake-mode))
+              auto-mode-alist))
 
 (provide '12-cpp)
