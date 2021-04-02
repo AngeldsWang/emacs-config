@@ -179,7 +179,7 @@ determine the exact padding."
    (ansible-section-face :foreground old-rose)
 
    ;; ml
-   (merlin-type-face :foreground fg-alt :background old-rose)
+   (merlin-type-face :foreground fg-alt :weight 'bold :background base2)
 
    )
 
