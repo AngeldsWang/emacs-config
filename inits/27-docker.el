@@ -4,7 +4,7 @@
 
 (add-hook 'dockerfile-mode-hook (lambda ()
   (setq-default indent-tabs-mode nil
-    tab-width 2)))
+    tab-width 4)))
 
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))

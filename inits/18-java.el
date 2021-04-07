@@ -1,3 +1,5 @@
+(add-to-list 'exec-path (concat (getenv "JAVA_HOME") "/bin"))
+
 (require 'meghanada)
 (require 'lsp-java)
 (add-hook 'java-mode-hook #'lsp)

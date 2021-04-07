@@ -165,6 +165,9 @@ determine the exact padding."
    (org-quote            :background bg :slant 'italic)
    (org-headline-done    :foreground base6)
 
+   ;; flycheck
+   (flycheck-error :underline `(:style wave :color "DimGrey") :background base3)
+
    ;; mu4e
    (mu4e-unread-face :foreground red :weight 'bold)
    (mu4e-header-key-face      :foreground orange    :weight 'bold)

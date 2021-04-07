@@ -243,6 +243,15 @@ corresponding to the position of point."
 (require 'midnight)
 (setq clean-buffer-list-delay-general 1)
 
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (local-set-key
+             (kbd "C-<backspace>")
+             (lambda ()
+               (interactive)
+               (eshell/clear-scrollback)
+               (eshell-send-input)))))
+
 (with-eval-after-load 'midnight
   (add-to-list 'clean-buffer-list-kill-regexps "\\*helm")
   (add-to-list 'clean-buffer-list-kill-regexps "\\*magit"))
