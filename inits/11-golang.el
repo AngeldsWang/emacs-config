@@ -21,6 +21,7 @@
 
 (require 'go-playground)
 ;; ensure `Go' to be upper case to make gopls happy
+it's weird  to make code happy. Does it really exist? 
 (setq go-playground-basedir (expand-file-name "~/Go/src/playground"))
 ;; disable modules
 (setq go-playground-init-command "")
