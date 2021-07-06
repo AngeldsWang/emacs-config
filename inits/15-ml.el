@@ -25,6 +25,10 @@
     )
   )
 
+(require 'merlin)
+(define-key merlin-mode-map "\M-." 'merlin-locate)
+(define-key merlin-mode-map "\M-," 'merlin-pop-stack)
+
 (add-hook 'tuareg-mode-hook (lambda ()
                               (add-hook 'before-save-hook #'ocamlformat-before-save)))
 
