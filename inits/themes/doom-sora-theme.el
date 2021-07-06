@@ -33,9 +33,7 @@ determine the exact padding."
    (fg         '("#c5c8c6" "#c5c6c6" "white"      )) ;; TODO set correct color
    (fg-alt     (doom-darken fg 0.6)) ;; TODO set correct color
 
-   (light-grey "#E6EEF3")
-   (grey       base7)
-   (dark-grey  base3)
+   
 
    (red         "#DF8C8C")
    (orange      "#F2C38F")
@@ -52,12 +50,16 @@ determine the exact padding."
    (big-stone   "#2F3B42")
    (grey-nickel "#C1C4BE")
 
+   (light-grey "#E6EEF3")
+   (grey       grey-nickel)
+   (dark-grey  base3)
+
    ;; face categories
    (highlight      cyan)
    (vertical-bar   (doom-lighten bg 0.1))
    (selection      big-stone)
    (builtin        blue)
-   (comments       grey)
+   (comments       base7)
    (doc-comments   (doom-lighten grey 0.1))
    (constants      highlight)
    (functions      blue)
@@ -165,9 +167,6 @@ determine the exact padding."
    (org-quote            :background bg :slant 'italic)
    (org-headline-done    :foreground base6)
 
-   ;; flycheck
-   (flycheck-error :underline `(:style wave :color "DimGrey") :background base3)
-
    ;; mu4e
    (mu4e-unread-face :foreground red :weight 'bold)
    (mu4e-header-key-face      :foreground orange    :weight 'bold)
@@ -183,6 +182,9 @@ determine the exact padding."
 
    ;; ml
    (merlin-type-face :foreground fg-alt :weight 'bold :background base2)
+
+   ;; flycheck
+   (flycheck-error :underline `(:style wave :color "DimGrey") :background base3)
 
    )
 
