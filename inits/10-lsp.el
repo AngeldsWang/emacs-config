@@ -8,13 +8,10 @@
   (add-hook 'c++-mode-hook #'lsp)
   (add-hook 'c-mode-hook #'lsp)
   (add-hook 'rust-mode-hook #'lsp)
-  (add-to-list 'lsp-file-watch-ignored "[/\\\\]mod$")
 
   :bind ("C-c h" . lsp-describe-thing-at-point)
   :custom (lsp-rust-server 'rust-analyzer)
-  (setq lsp-gopls-build-flags '("-mod=readonly"))
-  (lsp-enable-file-watchers t)
-  (lsp-file-watch-threshold 100000)
+  (lsp-enable-file-watchers nil)
 
   (setq company-minimum-prefix-length 1
         company-idle-delay 0.500)
