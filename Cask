@@ -149,6 +149,7 @@
 (depends-on "ocp-indent")
 (depends-on "org-plus-contrib")
 (depends-on "org-bullets")
+(depends-on "ox-hugo")
 (depends-on "ox-jira")
 (depends-on "ox-reveal")
 (depends-on "pallet")
