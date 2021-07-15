@@ -97,6 +97,7 @@
 (depends-on "go-rename")
 (depends-on "gotest")
 (depends-on "google-c-style")
+(depends-on "graphql-mode")
 (depends-on "grizzl")
 (depends-on "graphviz-dot-mode")
 (depends-on "hackernews")
