@@ -194,6 +194,7 @@
 (depends-on "smartparens")
 (depends-on "smartrep")
 (depends-on "smex")
+(depends-on "sql-indent")
 (depends-on "sqlformat")
 (depends-on "sr-speedbar")
 (depends-on "string-inflection")
