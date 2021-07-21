@@ -23,5 +23,6 @@
   :commands lsp-ui-mode)
 
 (setq lsp-headerline-breadcrumb-enable nil)
+(setq lsp-ui-doc-enable nil)
 
 (provide '10-lsp)
