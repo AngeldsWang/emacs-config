@@ -6,7 +6,7 @@
   (add-hook 'go-mode-hook #'lsp)
   (add-hook 'python-mode-hook #'lsp)
   (add-hook 'c++-mode-hook #'lsp)
-  (add-hook 'c-mode-hook #'lsp)
+  (add-hook 'c-mode-hook #'+c/lsp)
   (add-hook 'rust-mode-hook #'lsp)
 
   :bind ("C-c h" . lsp-describe-thing-at-point)
@@ -24,5 +24,9 @@
 
 (setq lsp-headerline-breadcrumb-enable nil)
 (setq lsp-ui-doc-enable nil)
+
+(defun +c/lsp ()
+  (unless (member major-mode '(ragel-mode bison-mode))
+    (lsp)))
 
 (provide '10-lsp)
