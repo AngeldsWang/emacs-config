@@ -1,3 +1,0 @@
-[submodule "inits/others/cue-mode"]
-	path = inits/others/cue-mode
-	url = git@github.com:russell/cue-mode.git
