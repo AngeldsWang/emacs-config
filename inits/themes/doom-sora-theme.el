@@ -60,7 +60,7 @@ determine the exact padding."
    (selection      big-stone)
    (builtin        blue)
    (comments       base7)
-   (doc-comments   (doom-lighten grey 0.1))
+   (doc-comments   base7)
    (constants      highlight)
    (functions      blue)
    (keywords       violet)
