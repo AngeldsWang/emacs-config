@@ -262,7 +262,7 @@ and closing parentheses and brackets."
 
 (require 'flycheck)
 ;; add current directory to include path manually
-(setq flycheck-perl-include-path `(,(magit-toplevel)))
+(add-hook 'cperl-mode-hook (lambda () (setq flycheck-perl-include-path `(,(magit-toplevel)))))
 (flycheck-define-checker perl-project-libs
   "A perl syntax checker."
   :command ("perl"
