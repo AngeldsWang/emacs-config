@@ -6,6 +6,7 @@
 ;; keybinds
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'hyper)
+(setq mac-right-command-modifier 'super)
 (global-set-key [(hyper a)] 'mark-whole-buffer)
 (global-set-key [(hyper v)] 'yank)
 (global-set-key [(hyper c)] 'kill-ring-save)
