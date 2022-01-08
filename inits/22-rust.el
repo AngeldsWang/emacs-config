@@ -10,5 +10,7 @@
 ;; playground
 (require 'rust-playground)
 (setq rust-playground-basedir (expand-file-name "~/work/my/rs/playground"))
+(add-hook 'rust-playground-mode-hook (lambda ()
+                                       (local-set-key (kbd "<C-return>") 'rust-playground-exec)))
 
 (provide '22-rust)
