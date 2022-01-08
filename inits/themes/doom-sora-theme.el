@@ -66,7 +66,7 @@ determine the exact padding."
    (keywords       violet)
    (methods        blue)
    (operators      fg)
-   (type           yellow)
+   (type           green)
    (strings        cyan)
    (variables      red)
    (numbers        highlight)
