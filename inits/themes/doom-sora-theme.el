@@ -1,4 +1,4 @@
-;;; doom-sora-theme.el --- inspired by Trevord Miller's Sora
+;;; doom-sora-theme.el --- inspired by Trevord Miller's Nova
 (require 'doom-themes)
 
 (defgroup doom-sora-theme nil
@@ -13,8 +13,8 @@ determine the exact padding."
 
 
 (def-doom-theme doom-sora
-  "A light theme inspired by Trevord Miller's Sora. See
-<https://trevordmiller.com/projects/sora>."
+  "A light theme inspired by Trevord Miller's Nova. See
+<https://trevordmiller.com/projects/nova>."
 
   ;; name      gui
   ((bg         '("#3c4c55" nil       nil))
