@@ -140,8 +140,8 @@ determine the exact padding."
    (helm-swoop-target-number-face     :foreground base5)
 
    ;; company
-   (company-tooltip-selection  :background bg :foreground red  :weight 'bold)
-   (company-tooltip-annotation                :foreground blue :distant-foreground bg)
+   (company-tooltip-selection  :background bg-alt :foreground red  :weight 'bold)
+   (company-tooltip-annotation                    :foreground blue :distant-foreground bg)
 
    ;; popup
    (popup-face :inherit 'tooltip)
