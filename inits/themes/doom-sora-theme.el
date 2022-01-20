@@ -99,6 +99,9 @@ determine the exact padding."
    ((line-number &override) :foreground grey)
    ((line-number-current-line &override) :foreground highlight)
 
+   ;; tooltip
+   (tooltip :background base5 :foreground fg)
+
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
    (rainbow-delimiters-depth-2-face :foreground blue)
@@ -137,7 +140,8 @@ determine the exact padding."
    (helm-swoop-target-number-face     :foreground base5)
 
    ;; company
-   (company-tooltip-selection  :background selection :foreground red)
+   (company-tooltip-selection  :background bg :foreground red  :weight 'bold)
+   (company-tooltip-annotation                :foreground blue :distant-foreground bg)
 
    ;; popup
    (popup-face :inherit 'tooltip)
