@@ -188,7 +188,8 @@ determine the exact padding."
    (merlin-type-face :foreground fg-alt :weight 'bold :background base2)
 
    ;; flycheck
-   (flycheck-error :underline `(:style wave :color "DimGrey") :background base3)
+   (flycheck-error   :underline `(:style wave :color ,red))
+   (flycheck-warning :underline `(:style wave :color ,orange))
 
    )
 
