@@ -99,6 +99,8 @@ determine the exact padding."
    ((line-number &override) :foreground grey)
    ((line-number-current-line &override) :foreground highlight)
 
+   (secondary-selection :background base6 :extend t)
+
    ;; tooltip
    (tooltip :background base5 :foreground fg)
 
@@ -165,9 +167,9 @@ determine the exact padding."
    ;; org-mode
    (org-level-1 :foreground blue :background (doom-darken bg 0.025)
                 :bold bold :height 1.2)
-   (org-block   :background (doom-lighten base3 0.09) :foreground grey-nickel)
-   (org-block-begin-line :background bg :foreground comments)
-   (org-block-end-line   :background bg :foreground comments)
+   (org-block   :background (doom-lighten base3 0.09)        :extend t)
+   (org-block-begin-line :background bg :foreground comments :extend t)
+   (org-block-end-line   :background bg :foreground comments :extend t)
    (org-quote            :background bg :slant 'italic)
    (org-headline-done    :foreground base6)
 
