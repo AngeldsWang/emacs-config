@@ -32,7 +32,7 @@
 (setq lsp-ui-doc-enable nil)
 
 (defun +c/lsp ()
-  (unless (member major-mode '(ragel-mode bison-mode))
+  (unless (member major-mode '(ragel-mode flex-mode bison-mode))
     (lsp)))
 
 (advice-add 'lsp :before (lambda (&rest _args) (eval '(setf (lsp-session-server-id->folders (lsp-session)) (ht)))))
