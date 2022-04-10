@@ -9,6 +9,9 @@
   (add-hook 'c-mode-hook #'+c/lsp)
   (add-hook 'rust-mode-hook #'lsp)
   (add-hook 'cperl-mode-hook #'lsp)
+  (lsp-register-custom-settings
+   '(("gopls.completeUnimported" t t)
+     ("gopls.staticcheck" t t)))
 
   :bind ("C-c h" . lsp-describe-thing-at-point)
   :custom
