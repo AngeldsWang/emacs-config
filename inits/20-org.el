@@ -10,7 +10,6 @@
 (require 'ox-hugo)
 (require 'ox-confluence-en "./others/ox-confluence-en.el")
 
-
 (setq org-export-backends '(ascii icalendar html latex md confluence-en jira)
       org-export-with-toc t
       org-export-with-author t)
@@ -26,6 +25,7 @@
    (emacs-lisp    . t)
    (scheme        . t)
    (elasticsearch . t)
+   (plantuml      . t)
    (mermaid       . t)))
 
 (setq org-src-window-setup 'split-window-below)
@@ -35,6 +35,10 @@
 
 ;; Don’t ask before evaluating code blocks
 (setq org-confirm-babel-evaluate nil)
+
+(add-to-list
+  'org-src-lang-modes '("plantuml" . plantuml))
+(setq org-plantuml-jar-path "/usr/local/opt/plantuml/libexec/plantuml.jar")
 
 (add-hook 'org-mode-hook
 	      (lambda () (local-set-key (kbd "C-c C-p") 'org-toggle-inline-images)))
