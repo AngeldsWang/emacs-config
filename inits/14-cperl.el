@@ -3,6 +3,8 @@
 (add-to-list 'auto-mode-alist '("\\.psgi$" . perl-mode))
 (add-to-list 'auto-mode-alist '("\\.t$" . perl-mode))
 
+(add-to-list 'exec-path (concat (getenv "HOME") "/.plenv/shims"))
+
 (setq cperl-indent-level 4)
 (setq cperl-continued-statement-offset 4)
 (setq cperl-brace-offset -4)
