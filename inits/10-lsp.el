@@ -11,7 +11,8 @@
   (add-hook 'cperl-mode-hook #'lsp)
   (lsp-register-custom-settings
    '(("gopls.completeUnimported" t t)
-     ("gopls.staticcheck" t t)))
+     ("gopls.staticcheck" t t)
+     ("gopls.memoryMode" "DegradeClosed" nil)))
 
   :bind ("C-c h" . lsp-describe-thing-at-point)
   :custom
