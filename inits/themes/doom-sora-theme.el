@@ -35,20 +35,20 @@ determine the exact padding."
 
    
 
-   (red         "#DF8C8C")
-   (orange      "#F2C38F")
-   (yellow      "#DADA93")
-   (green       "#A8CE93")
-   (blue        "#83AFE5")
+   (red         '("#DF8C8C"))
+   (orange      '("#F2C38F"))
+   (yellow      '("#DADA93"))
+   (green       '("#A8CE93"))
+   (blue        '("#83AFE5"))
    (dark-blue   (doom-darken blue 0.7))
    (teal        blue)
    (magenta     (doom-lighten "#b294bb" 0.3)) ; FIXME TODO set correct color
-   (violet      "#9A93E1")
-   (cyan        "#7FC1CA")
+   (violet      '("#9A93E1"))
+   (cyan        '("#7FC1CA"))
    (dark-cyan   (doom-darken cyan 0.4))
-   (old-rose    "#C97A7E")
-   (big-stone   "#2F3B42")
-   (grey-nickel "#C1C4BE")
+   (old-rose    '("#C97A7E"))
+   (big-stone   '("#2F3B42"))
+   (grey-nickel '("#C1C4BE"))
 
    (light-grey "#E6EEF3")
    (grey       grey-nickel)
