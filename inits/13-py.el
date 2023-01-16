@@ -6,33 +6,53 @@
   :ensure t
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
-                          (lsp))))
+                          (lsp)
+                          (setq lsp-pyright-python-executable-cmd "python3.8")))
+  :config
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-tramp-connection (cons "pyright-langserver" lsp-pyright-langserver-command-args))
+    :major-modes '(python-mode)
+    :remote? t
+    :server-id 'pyright-remote
+    :multi-root t
+    :priority 3
+    :initialized-fn (lambda (workspace)
+                      (with-lsp-workspace workspace
+			;; we send empty settings initially, LSP server will ask for the
+			;; configuration of each workspace folder later separately
+			(lsp--set-configuration
+			 (make-hash-table :test 'equal))))
+    :download-server-fn (lambda (_client callback error-callback _update?)
+                          (lsp-package-ensure 'pyright callback error-callback))
+    :notification-handlers (lsp-ht ("pyright/beginProgress" 'lsp-pyright--begin-progress-callback)
+                                   ("pyright/reportProgress" 'lsp-pyright--report-progress-callback)
+                                   ("pyright/endProgress" 'lsp-pyright--end-progress-callback)))))
+
 
 (use-package python-black
   :demand t
   :after python
   :hook (python-mode . python-black-on-save-mode))
 
-;; (elpy-enable)
 
-;; (setq elpy-rpc-backend "jedi")
-;; (setq elpy-rpc-python-command "python3")
+;; ein
+(eval-when-compile
+  (require 'ein)
+  (require 'ein-notebook)
+  (require 'ein-notebooklist)
+  (require 'ein-markdown-mode))
 
-;; (add-hook 'elpy-mode-hook (lambda ()
-;;                             (add-hook 'before-save-hook
-;;                                       'elpy-black-fix-code nil t)))
+(setq ein:worksheet-enable-undo t)
+(setq ein:output-area-inlined-images t)
 
-;; (when (load "flycheck" t t)
-;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
+(require 'ein-markdown-mode)
+(setq ein:markdown-command "pandoc --metadata pagetitle=\"markdown preview\" -f markdown -c ~/.pandoc/gh-pandoc.css -s --self-contained --mathjax=https://raw.githubusercontent.com/ustasb/dotfiles/b54b8f502eb94d6146c2a02bfc62ebda72b91035/pandoc/mathjax.js")
 
-;; (defun my/python-mode-hook ()
-;;   (add-to-list 'company-backends 'company-jedi))
-
-;; (add-hook 'python-mode-hook 'my/python-mode-hook)
-
-;; (setq python-shell-interpreter "ipython"
-;;       python-shell-interpreter-args "-i --simple-prompt")
+(defun ein:markdown-preview ()
+  (interactive)
+  (ein:markdown-standalone)
+  (browse-url-of-buffer ein:markdown-output-buffer-name))
 
 
 (provide '13-py)
