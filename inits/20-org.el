@@ -20,6 +20,7 @@
    (perl          . t)
    (C             . t)
    (python        . t)
+   (ein           . t)
    (ruby          . t)
    (dot           . t)
    (emacs-lisp    . t)
