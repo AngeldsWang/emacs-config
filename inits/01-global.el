@@ -1,5 +1,7 @@
 (setq inhibit-startup-screen t)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
@@ -29,7 +31,6 @@
 (doom-themes-neotree-config)
 (doom-themes-org-config)
 
-(scroll-bar-mode -1)
 (eval-when-compile (require 'cl))
 ;; font and size
 (set-frame-font "hack-10")
@@ -256,5 +257,7 @@ corresponding to the position of point."
 (with-eval-after-load 'midnight
   (add-to-list 'clean-buffer-list-kill-regexps "\\*helm")
   (add-to-list 'clean-buffer-list-kill-regexps "\\*magit"))
+
+(add-to-list 'auto-mode-alist '("\\.sh$" . shell-script-mode))
 
 (provide '01-global)
