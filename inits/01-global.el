@@ -107,6 +107,10 @@ Version 2017-06-02"
 (require 'epa-file)
 (custom-set-variables '(epg-gpg-program "/usr/local/bin/gpg"))
 (epa-file-enable)
+(setq epg-pinentry-mode 'loopback)
+(setq auth-sources
+      '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
+
 
 
 ;; ediff

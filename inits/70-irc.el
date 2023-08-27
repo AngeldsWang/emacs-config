@@ -28,9 +28,6 @@
 ;;          (:connection-type . ssl))))
 
 
-(setq auth-sources
-      '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
-
 (defun my-fetch-password (&rest params)
   (require 'auth-source)
   (let ((match (car (apply 'auth-source-search params))))
