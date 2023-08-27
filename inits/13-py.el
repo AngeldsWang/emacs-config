@@ -30,6 +30,13 @@
                                    ("pyright/endProgress" 'lsp-pyright--end-progress-callback)))))
 
 
+(use-package lsp-python-ms
+  :ensure t
+  :init (setq lsp-python-ms-auto-install-server t)
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-python-ms)
+                          (lsp))))
+
 (use-package python-black
   :demand t
   :after python
