@@ -1,5 +1,4 @@
 (require 'helm)
-(require 'helm-config)
 (require 'helm-ag)
 (require 'helm-files)
 
