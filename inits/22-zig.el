@@ -1,7 +1,7 @@
 (use-package zig-mode
   :hook ((zig-mode . lsp-deferred))
   :ensure t :after lsp-mode
-  :custom (zig-format-on-save nil)
+  :custom (zig-format-on-save t)
   :config
   (add-to-list 'lsp-language-id-configuration '(zig-mode . "zig"))
   (lsp-register-client
