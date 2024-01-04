@@ -42,6 +42,12 @@
   :after python
   :hook (python-mode . python-black-on-save-mode))
 
+;; quickrun
+(quickrun-add-command "python"
+  '((:command . "/usr/bin/env python3")
+    (:exec . ("%c %s"))
+    (:tempfile . nil)))
+
 
 ;; ein
 (eval-when-compile
